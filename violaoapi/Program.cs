@@ -1,6 +1,10 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using violaoapi.Configurations;
+using violaoapi.Data;
+using violaoapi.Services.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Configuração JWT
+var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
 builder.Services.AddAuthentication(options =>
 {
@@ -24,8 +29,8 @@ builder.Services.AddAuthentication(options =>
     {
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = true,
-        ValidateAudience = true,
+        ValidateIssuer = false,
+        ValidateAudience = false,
         ValidateLifetime = true,
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"]
@@ -33,13 +38,15 @@ builder.Services.AddAuthentication(options =>
 });
 
 // Configuração do banco de dados
-// builder.Services.AddDbContext<ApplicationDbContext>(options =>
-//     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// builder.Services.AddControllers();
-// builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-// builder.Services.AddScoped<IUsuarioService, UsuarioService>();
-// builder.Services.AddSingleton<AuthService>();
+builder.Services.AddControllers();
+builder.Services.AddSingleton<AuthService>(provider => new AuthService(builder.Configuration));
+
+
+// Chame a configuração de injeção de dependências
+builder.Services.AddDependencyInjection();
 
 var app = builder.Build();
 
@@ -53,6 +60,15 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+
+
+//Configuracoes do Cors
+
+// app.UseCors(x => x
+// .AllowAnyOrigin()
+// .AllowAnyMethod()
+// .AllowAnyHeader());
+
 
 app.MapControllers();
 
