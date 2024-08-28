@@ -1,0 +1,6 @@
+@violaoapi_HostAddress = http://localhost:5031
+
+GET {{violaoapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
