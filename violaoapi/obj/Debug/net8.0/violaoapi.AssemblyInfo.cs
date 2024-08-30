@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("violaoapi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7714f3245bbf3c5323ca5707002ed8cc7dbd653e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1555a78d2ca9762da7ad75d8af0a25de20d84c11")]
 [assembly: System.Reflection.AssemblyProductAttribute("violaoapi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("violaoapi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

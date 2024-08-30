@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MAR3Hf/slrQ=",
+  "dgSpecHash": "kDLn79gwb78=",
   "success": true,
-  "projectFilePath": "d:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\violaoapi.csproj",
+  "projectFilePath": "D:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\violaoapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kaue\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Kaue\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

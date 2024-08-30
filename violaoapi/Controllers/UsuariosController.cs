@@ -73,7 +73,7 @@ namespace violaoapi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> CriarUsuario(UsuarioCreateDTO usuarioDto)
+        public async Task<ActionResult> CriarUsuario([FromBody] UsuarioCreateDTO usuarioDto)
         {
             await _usuarioService.AddUsuarioAsync(usuarioDto);
             return CreatedAtAction(nameof(GetUsuario), new { id = usuarioDto.Email }, usuarioDto);
@@ -81,7 +81,7 @@ namespace violaoapi.Controllers
 
         [HttpPut("{id}")]
         [Authorize]
-        public async Task<IActionResult> EditarUsuario(int id, UsuarioUpdateDTO usuarioDto)
+        public async Task<IActionResult> EditarUsuario([FromBody] int id, UsuarioUpdateDTO usuarioDto)
         {
             await _usuarioService.UpdateUsuarioAsync(id, usuarioDto);
             return NoContent();
