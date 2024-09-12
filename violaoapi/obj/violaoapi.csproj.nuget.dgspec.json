@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\violaoapi.csproj": {}
+    "D:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\violaoapi.csproj": {}
   },
   "projects": {
-    "d:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\violaoapi.csproj": {
+    "D:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\violaoapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\violaoapi.csproj",
+        "projectUniqueName": "D:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\violaoapi.csproj",
         "projectName": "violaoapi",
-        "projectPath": "d:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\violaoapi.csproj",
+        "projectPath": "D:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\violaoapi.csproj",
         "packagesPath": "C:\\Users\\Kaue\\.nuget\\packages\\",
-        "outputPath": "d:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\obj\\",
+        "outputPath": "D:\\Faculdade\\TCC\\Backend\\ProjetoMeioAmbiente-BackEnd\\violaoapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kaue\\AppData\\Roaming\\NuGet\\NuGet.Config"

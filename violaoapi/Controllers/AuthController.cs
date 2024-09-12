@@ -26,7 +26,7 @@ namespace violaoapi.Controllers
             _logger = logger;
         }
 
-        [HttpPost("login")]
+        [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] Login login)
         {
             _logger.LogInformation($"Tentativa de login com o email: {login.Email}");

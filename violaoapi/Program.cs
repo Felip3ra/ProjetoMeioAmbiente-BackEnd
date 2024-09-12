@@ -46,7 +46,7 @@ builder.Services.AddSingleton<AuthService>(provider => new AuthService(builder.C
 
 
 // Chame a configuração de injeção de dependências
-builder.Services.AddDependencyInjection();
+builder.Services.AddDependencyInjection(builder.Configuration);
 
 var app = builder.Build();
 
