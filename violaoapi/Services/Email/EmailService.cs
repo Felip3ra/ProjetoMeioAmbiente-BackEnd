@@ -27,7 +27,7 @@ namespace violaoapi.Services.Email
             var smtpPort = int.Parse(_configuration["Smtp:Port"]);
             var smtpUsername = _configuration["Smtp:Username"];
             var smtpPassword = _configuration["Smtp:Password"];
-            var enableSSL = true;
+            var enableSSL = bool.Parse(_configuration["Smtp:EnableSsl"]);
 
             using (var client = new SmtpClient(smtpHost, smtpPort))
             {

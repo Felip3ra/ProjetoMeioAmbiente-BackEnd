@@ -34,7 +34,7 @@ namespace violaoapi.Controllers
             return Ok(usuarios);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("ById/{id}")]
         [Authorize]
         public async Task<ActionResult<UsuarioDTO>> GetUsuario(int id)
         {
@@ -46,7 +46,7 @@ namespace violaoapi.Controllers
             return Ok(usuario);
         }
 
-        [HttpGet("email/{email}")]
+        [HttpGet("ByEmail/{email}")]
         [Authorize]
         public async Task<ActionResult<Usuario>> GetUsuarioByEmail(string email)
         {
@@ -72,14 +72,14 @@ namespace violaoapi.Controllers
             return Ok();
         }
 
-        [HttpPost]
+        [HttpPost("CriarUsuario")]
         public async Task<ActionResult> CriarUsuario([FromBody] UsuarioCreateDTO usuarioDto)
         {
             await _usuarioService.AddUsuarioAsync(usuarioDto);
             return CreatedAtAction(nameof(GetUsuario), new { id = usuarioDto.Email }, usuarioDto);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("EditarUsuario{id}")]
         [Authorize]
         public async Task<IActionResult> EditarUsuario([FromBody] int id, UsuarioUpdateDTO usuarioDto)
         {
@@ -87,12 +87,18 @@ namespace violaoapi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("DeletarUsuario/{id}")]
         [Authorize]
         public async Task<IActionResult> DeletarUsuario(int id)
         {
+            var usuario = await _usuarioService.GetUsuarioByIdAsync(id);
+            if (usuario == null)
+            {
+                return NotFound("Usuario nao encontrado!");
+            }
+
             await _usuarioService.DeleteUsuarioAsync(id);
-            return NoContent();
+            return Ok("Usuario deletado com sucesso!");
         }
     }
 }
