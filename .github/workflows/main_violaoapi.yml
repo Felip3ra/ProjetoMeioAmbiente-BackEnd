@@ -22,7 +22,7 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build D:\Faculdade\TCC\Backend\ProjetoMeioAmbiente-BackEnd\violaoapi\violaoapi.sln --configuration Release
+        run: dotnet build ./violaoapi/violaoapi.sln --configuration Release
 
       - name: dotnet publish
         run: dotnet publish D:\Faculdade\TCC\Backend\ProjetoMeioAmbiente-BackEnd\violaoapi\violaoapi.sln -c Release -o ./publish
