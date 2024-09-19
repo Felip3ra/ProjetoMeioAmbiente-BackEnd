@@ -36,6 +36,10 @@ jobs:
       - name: dotnet publish
         run: dotnet publish ${{ steps.find-sln.outputs.solution_path }} -c Release -o ./publish
 
+      # Listar arquivos publicados (para verificação)
+      - name: List published files
+        run: ls ./publish
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
